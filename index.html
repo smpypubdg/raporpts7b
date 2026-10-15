@@ -53,7 +53,7 @@ dt{color:var(--muted)} dd{margin:0;font-weight:700}
 .score{margin:18px 0;text-align:center;background:var(--bg);border:1.5px dashed var(--g2);border-radius:18px;padding:14px}
 .score span{display:block;color:var(--muted);font-size:.85rem}
 .score b{font-family:'Lora',Georgia,serif;font-size:2.6rem;color:var(--g3);line-height:1.1}
-.note{margin-top:22px;background:var(--card);border-left:6px solid var(--g2);border-radius:16px;padding:18px 20px;border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+.note{margin-top:0;background:var(--bg);border-left:6px solid var(--g2);border-radius:16px;padding:18px 20px;border-top:1.5px solid var(--line);border-right:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
 .note h2{font-family:'Lora',Georgia,serif;font-size:1.15rem;margin:0 0 8px}
 .note p{margin:0 0 8px;font-size:.96rem}
 .note p:last-child{margin:0;color:var(--g3);font-weight:700}
@@ -93,39 +93,33 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
       <dt>NIM</dt><dd id="rNim"></dd>
     </dl>
     <div class="score"><span>Nilai Total ATS</span><b id="rNilai"></b></div>
-    <a class="btn" id="rLink" href="#" target="_blank" rel="noopener noreferrer">📥 Unduh Rapor</a>
+    <div class="note"><h2>🌱 Pesan Untukmu</h2><p id="rMsg"></p><p>Salam hangat, SMP YPU Bandung</p></div>
+    <a class="btn" id="rLink" href="#" target="_blank" rel="noopener noreferrer" style="margin-top:18px">📥 Unduh Rapor</a>
   </div>
-
-  <section class="note">
-    <h2>🌱 Selamat untuk Seluruh Siswa Kelas VII-B!</h2>
-    <p>Selamat kepada seluruh siswa kelas VII-B. Hasil yang kalian raih sudah memuaskan, dan itu buah dari belajar yang telah dilakukan dengan maksimal.</p>
-    <p>Jangan berpuas diri. Seperti pohon yang tumbuh perlahan namun pasti, teruslah belajar lebih giat lagi di sisa semester ini. Semangat! 🌳</p>
-    <p>Salam hangat, SMP YPU Bandung</p>
-  </section>
   <footer>© SMP YPU Bandung · Data bersifat rahasia, hanya untuk siswa yang bersangkutan.</footer>
 </div>
 
 <script>
 var D=[
-["262707021","0136811241","Abiyan Akbar Caisar Nurfattah",420,"1vocH3UDYso220X9SnJqh2LQk6-7wFuzA"],
-["262707022","0143620940","Aisha Hanes Afitdaeni",476,"16JV7i0rlTLS13IrYbSqD3zebpWkOhR6e"],
-["262707023","3137489511","Annisa Safaria Nurjannah",672,"1O2soG_52kMW5639g7ZktcA7zlgH9Ieqo"],
-["262707024","0145166440","Aqila Maharani",573,"1CJZ7DjzMQ9qLmc9h34pMR_QvPZW7y-gf"],
-["262707005","0131559708","Aqilla Putri Oktavia",518,"1mu6Vx3Wtip-k-ssn9dXMRgJfplUb6stv"],
-["262707025","3135596916","Aqiysya Bilqis Nur Agnetta",666,"1-LQZFmmTSW8FK4U407anbWfmYXQiRLUH"],
-["262707026","0132918381","Ardan Fauzy",622,"1x0O-tlXI2oETOjCa_xO4nkQWxerCIJGz"],
-["262707027","3131852458","Aska",593,"1l-TYOiTntjnVo4ODaFH9TN7qCsMaOa-b"],
-["262707028","0158800726","Asri Tri Wahyuni",568,"1sBU8M38gtLtV_1Sg0eqnl__KUWy4DHKx"],
-["262707029","3128916159","Dika Hermawan",520,"1LPLiFx3ntF9B9zgooOiyZbIa6KmqsV-_"],
-["262707030","0124010765","Intan Kharisma",618,"181WtGRlqqg-g8U9w-PHiSAlGieiSmR4W"],
-["262707031","0134674504","Khoerul Fahry Bashary",623,"1PKUaR0H6YwMvswlj_HnmRbuMuaP3_BdF"],
-["262707032","3137506205","Muhammad Bilal Maulana",577,"1EP0WF1N5qn8eVKThNZLmYtZJHL8Y9yPF"],
-["262707033","0138481669","Muhammad Iqbal Nur Hafiz",675,"1gr3_uCnCSRT-H-2d4gr7HLQvjamcHrBd"],
-["262707035","0136673432","Prama Pramuadji Sidik",588,"1HrQDZe_UxvfbRm1UiLJcuM0Vtu4TVEa2"],
-["262707036","3132295076","Rayyan Ziqri",748,"1ohnqaAsQThKgwPTlKpE91OFJVfQBcPj3"],
-["262707037","0147641986","Reva Lestari",573,"1HwYN5PiP8o7FkVTQbg2MjfNcWcxA3w-p"],
-["262707038","0152478643","Rizqiya Azila Putri",595,"1B4kNRzQS9amWiWRtvJDf7DOf0rImWN6X"],
-["262707039","0143171413","Rustandi Dzulkarnaen",577,"19TyVg5LttT7EaXsrLmttb_XX5bsKO4oM"]
+["262707021", "0136811241", "Abiyan Akbar Caisar Nurfattah", 420, "1PgmYrBz44VM5n0e9mAwq-_eyr4ZG8-M4", "Selamat, Abiyan! Hasilmu sudah memuaskan dan menunjukkan belajarmu sudah maksimal. Seperti tunas yang baru bersemi, teruslah tumbuh dan belajar lebih giat lagi di sisa semester ini."],
+["262707022", "0143620940", "Aisha Hanes Afitdaeni", 476, "1rctS55nl72hfDBSfDRVOKWrr3UogC2D3", "Selamat, Aisha! Kerja kerasmu membuahkan hasil yang memuaskan. Seperti embun pagi yang menyegarkan daun, semangat belajarmu akan terus membuatmu berkembang. Tetap giat di sisa semester ini!"],
+["262707023", "3137489511", "Annisa Safaria Nurjannah", 672, "1neZCR8eNa0dGB2nbsCwl_dAGDVq82N7h", "Selamat, Annisa! Pencapaianmu sangat membanggakan dan menunjukkan belajarmu sudah maksimal. Seperti pohon rindang yang kokoh, pertahankan semangatmu dan belajar lebih giat lagi di sisa semester ini."],
+["262707024", "0145166440", "Aqila Maharani", 573, "1Tjjv5ygemrhdH5juzE3TUuk71hIusiBO", "Selamat, Aqila! Hasil yang memuaskan ini buah dari ketekunanmu. Seperti sungai yang terus mengalir, jangan berhenti belajar dan tetap semangat di sisa semester ini."],
+["262707005", "0131559708", "Aqilla Putri Oktavia", 518, "1cmndpp2KXEkbJ4bBoMjmkGGfF8WY4pS7", "Selamat, Aqilla! Belajarmu sudah maksimal dan hasilnya memuaskan. Seperti bunga yang mekar perlahan, teruslah belajar lebih giat agar semakin cemerlang di sisa semester ini."],
+["262707025", "3135596916", "Aqiysya Bilqis Nur Agnetta", 666, "1AfqLRO5UPOjVRLEH01nK5PgzATl36FUD", "Selamat, Aqiysya! Nilaimu sangat memuaskan, bukti usaha yang sungguh-sungguh. Seperti pelangi sehabis hujan, pertahankan prestasimu dan teruslah semangat belajar di sisa semester ini."],
+["262707026", "0132918381", "Ardan Fauzy", 622, "1z_NcCXDQDsZKT_YWJ7XgqJQeS2A6p_zN", "Selamat, Ardan! Hasil yang kamu raih memuaskan dan menunjukkan belajarmu sudah maksimal. Seperti gunung yang tegar menjulang, tetaplah konsisten dan belajar lebih giat lagi di sisa semester ini."],
+["262707027", "3131852458", "Aska", 593, "17azTaaan7jmwOOZQzepmhniWUtUQkd1M", "Selamat, Aska! Pencapaianmu memuaskan, hasil dari belajar yang maksimal. Seperti kupu-kupu yang terbang makin tinggi, teruslah semangat belajar di sisa semester ini."],
+["262707028", "0158800726", "Asri Tri Wahyuni", 568, "1bIMU8-ZSEqtqM-Io7RAD8shVIIBDoAD7", "Selamat, Asri! Usaha dan ketekunanmu membuahkan hasil yang memuaskan. Seperti akar yang tumbuh kuat di dalam tanah, teruslah belajar lebih giat lagi di sisa semester ini."],
+["262707029", "3128916159", "Dika Hermawan", 520, "11qFrlKBV71qGg67IJaenWjsMgSvCtRBi", "Selamat, Dika! Hasilmu memuaskan dan belajarmu sudah maksimal. Seperti pohon muda yang terus menjulang ke langit, tetap semangat dan belajar lebih giat lagi di sisa semester ini."],
+["262707030", "0124010765", "Intan Kharisma", 618, "1BAL1OHpZ_Sz9ngwck4Hh1azqgNfcDFlD", "Selamat, Intan! Pencapaianmu patut dibanggakan dan menunjukkan belajarmu sudah maksimal. Bersinarlah terus seperti cahaya mentari pagi, dan teruslah semangat belajar di sisa semester ini."],
+["262707031", "0134674504", "Khoerul Fahry Bashary", 623, "18aClwSTx4RRwTHiYHRfXIZEj4EW6Ss5W", "Selamat, Khoerul! Hasil yang memuaskan ini buah dari belajarmu yang maksimal. Seperti hutan yang tak pernah berhenti tumbuh, teruslah belajar lebih giat lagi di sisa semester ini."],
+["262707032", "3137506205", "Muhammad Bilal Maulana", 577, "1qC_p8-GlO5VijSzuV8jI6M7LhnS4nG06", "Selamat, Bilal! Kamu sudah belajar dengan maksimal dan hasilnya memuaskan. Seperti angin sejuk yang membawa semangat baru, tetaplah giat belajar di sisa semester ini."],
+["262707033", "0138481669", "Muhammad Iqbal Nur Hafiz", 675, "1z69iTWvVoT0U7inezbvGNPxrYWBbw-KO", "Selamat, Iqbal! Pencapaianmu sangat membanggakan, bukti belajarmu sudah maksimal. Seperti elang yang terbang tinggi di atas lembah, pertahankan semangatmu dan belajar lebih giat lagi di sisa semester ini."],
+["262707035", "0136673432", "Prama Pramuadji Sidik", 588, "1p9SY9M7hWBeD3t248gQSaCmgLAhoA3aQ", "Selamat, Prama! Hasilmu memuaskan berkat usahamu yang maksimal. Seperti batu di tepi sungai yang kokoh, tetaplah konsisten dan semangat belajar di sisa semester ini."],
+["262707036", "3132295076", "Rayyan Ziqri", 748, "1p4UF4ADz0WgwVd25Nu7F_WkTD-ZtedJz", "Selamat, Rayyan! Pencapaianmu luar biasa dan sangat memuaskan, hasil dari belajar yang maksimal. Seperti pohon tertinggi yang menyapa langit, tetaplah rendah hati dan teruslah belajar lebih giat lagi di sisa semester ini."],
+["262707037", "0147641986", "Reva Lestari", 573, "16ILsdDfuu8XkCMuL9cOzne1jFyMmjIXN", "Selamat, Reva! Hasil memuaskan ini menunjukkan belajarmu sudah maksimal. Seperti kelopak bunga yang mekar di musim semi, teruslah semangat dan belajar lebih giat lagi di sisa semester ini."],
+["262707038", "0152478643", "Rizqiya Azila Putri", 595, "1mj2-1R3ahK4ynOq94k1PaY3XzbWo01rJ", "Selamat, Rizqiya! Kerja kerasmu terbayar dengan hasil yang memuaskan. Seperti air terjun yang mengalir tanpa henti, jaga terus semangatmu dan belajar lebih giat lagi di sisa semester ini."],
+["262707039", "0143171413", "Rustandi Dzulkarnaen", 577, "1aboE3TDvCSuzr1Y9ND-0xfR6-J9eg5Gg", "Selamat, Rustandi! Belajarmu sudah maksimal dan hasilnya memuaskan. Seperti benih yang disiram dengan sabar, teruslah tumbuh dan semangat belajar di sisa semester ini."]
 ];
 var $=function(i){return document.getElementById(i)};
 function cari(){
@@ -133,7 +127,7 @@ function cari(){
   e.style.display="none";h.style.display="none";
   var s=D.filter(function(r){return r[0]===n&&r[1]===p})[0];
   if(!s){e.textContent="Data tidak ditemukan. Periksa kembali NIM dan NISN Anda.";e.style.display="block";return}
-  $("hi").textContent="Selamat, "+s[2].split(" ")[0]+"! 🌟";
+  $("hi").textContent="Selamat! 🌟";$("rMsg").textContent=s[5];
   $("rNama").textContent=s[2];$("rNim").textContent=s[0];$("rNilai").textContent=s[3];
   $("rLink").href="https://drive.google.com/file/d/"+s[4]+"/view?usp=drive_link";
   h.style.display="block";h.scrollIntoView({behavior:"smooth",block:"start"});
