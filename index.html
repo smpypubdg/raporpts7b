@@ -58,6 +58,14 @@ dt{color:var(--muted)} dd{margin:0;font-weight:700}
 .note p{margin:0 0 8px;font-size:.96rem}
 .note p:last-child{margin:0;color:var(--g3);font-weight:700}
 footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+input:disabled{opacity:.6;cursor:not-allowed}
+.cd{display:none;text-align:center;background:var(--bg);border:1.5px dashed var(--g2);border-radius:18px;padding:16px 12px;margin-bottom:18px}
+.cdt{margin:0 0 12px;font-weight:700;color:var(--g3);font-size:.95rem}
+.cdg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cdg div{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 4px}
+.cdg b{display:block;font-family:'Lora',Georgia,serif;font-size:1.6rem;color:var(--g3);line-height:1.1}
+.cdg span{font-size:.75rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -77,6 +85,7 @@ footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
   </header>
 
   <div class="card">
+    <div id="cd" class="cd"><p class="cdt">🌿 Pengumuman dibuka Jumat, 16 Oktober 2026<br>pukul 13.00 WIB</p><div class="cdg"><div><b id="cdD">0</b><span>Hari</span></div><div><b id="cdH">00</b><span>Jam</span></div><div><b id="cdM">00</b><span>Menit</span></div><div><b id="cdS">00</b><span>Detik</span></div></div></div>
     <label for="nim">Username (Nomor Induk Murid)</label>
     <input id="nim" inputmode="numeric" autocomplete="off" placeholder="Contoh: 262707021">
     <label for="nisn">Password (NISN)</label>
@@ -122,7 +131,19 @@ var D=[
 ["262707039", "0143171413", "Rustandi Dzulkarnaen", 652, "1Z0xlIQvM8FYvrQ9ldA4-czoOg2Ef0mqe", "Selamat, Rustandi! Belajarmu sudah maksimal dan hasilnya memuaskan. Seperti benih yang disiram dengan sabar, teruslah tumbuh dan semangat belajar di sisa semester ini."]
 ];
 var $=function(i){return document.getElementById(i)};
+var OPEN=new Date("2026-10-16T13:00:00+07:00").getTime();
+function p2(x){return(x<10?"0":"")+x}
+function tick(){
+  var d=OPEN-Date.now(),lock=d>0;
+  $("cd").style.display=lock?"block":"none";
+  ["nim","nisn","cari"].forEach(function(i){$(i).disabled=lock});
+  if(lock){var t=Math.floor(d/1000);
+    $("cdD").textContent=Math.floor(t/86400);$("cdH").textContent=p2(Math.floor(t%86400/3600));
+    $("cdM").textContent=p2(Math.floor(t%3600/60));$("cdS").textContent=p2(t%60);
+    $("hasil").style.display="none";}
+}
 function cari(){
+  if(Date.now()<OPEN){tick();return}
   var n=$("nim").value.trim(),p=$("nisn").value.trim(),e=$("err"),h=$("hasil");
   e.style.display="none";h.style.display="none";
   var s=D.filter(function(r){return r[0]===n&&r[1]===p})[0];
@@ -133,6 +154,7 @@ function cari(){
   h.style.display="block";h.scrollIntoView({behavior:"smooth",block:"start"});
 }
 $("cari").addEventListener("click",cari);
+tick();setInterval(tick,1000);
 ["nim","nisn"].forEach(function(i){$(i).addEventListener("keydown",function(ev){if(ev.key==="Enter")cari()})});
 </script>
 </body>
